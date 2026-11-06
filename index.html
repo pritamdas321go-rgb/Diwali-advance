@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>A Quiet Diwali for the Brightest Soul 🪔✨</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for authentic hand-drawn doodle aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Patrick+Hand&family=Sniglet:wght@400;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --crayon-stroke: #231215;
+      --diwali-gold: #ffbe2e;
+      --diwali-saffron: #ff6a1a;
+      --diwali-deep: #160722;
+      --diwali-glow: #ffdf73;
+    }
+
+    * {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Patrick Hand', cursive, sans-serif;
+      background: radial-gradient(circle at 50% 10%, #2b0d3d 0%, #170726 50%, #0a0212 100%);
+      color: #231215;
+      user-select: none;
+      min-height: 100dvh;
+      overflow-x: hidden;
+    }
+
+    .font-doodle { font-family: 'Gaegu', cursive; }
+    .font-chubby { font-family: 'Sniglet', cursive; }
+    .font-hand { font-family: 'Caveat', cursive; }
+
+    /* Hand-drawn wobbly paper card aesthetic with rangoli & lights integration */
+    .doodle-card {
+      background: #fff8ee;
+      border: 3.5px solid var(--crayon-stroke);
+      border-radius: 255px 18px 225px 22px/22px 225px 18px 255px;
+      box-shadow: 4px 6px 0px rgba(8, 2, 14, 0.96);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    /* Hanging light strand drape animation */
+    @keyframes swaySoft {
+      0%, 100% { transform: rotate(-0.8deg); }
+      50% { transform: rotate(1deg); }
+    }
+    .swag-lights {
+      transform-origin: top center;
+      animation: swaySoft 3.8s ease-in-out infinite;
+    }
+
+    .doodle-btn {
+      border: 3px solid var(--crayon-stroke);
+      border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+      box-shadow: 3px 4px 0px rgba(8, 2, 14, 0.95);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .doodle-btn:active {
+      transform: translateY(2px) scale(0.97);
+      box-shadow: 1px 2px 0px rgba(8, 2, 14, 1);
+    }
+
+    /* Hanging fairy light bulbs animation */
+    @keyframes bulbGlow {
+      0%, 100% { opacity: 0.65; transform: scale(0.9); filter: drop-shadow(0 0 4px #ffd54f); }
+      50% { opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 14px #ffc107); }
+    }
+    .hanging-bulb { animation: bulbGlow 2.4s ease-in-out infinite; }
+    .hanging-bulb:nth-child(2n) { animation-delay: 0.6s; }
+    .hanging-bulb:nth-child(3n) { animation-delay: 1.2s; }
+    .hanging-bulb:nth-child(4n) { animation-delay: 1.8s; }
+
+    /* Animated Diya Flame */
+    @keyframes flameFlicker {
+      0%, 100% { transform: scale(1) rotate(-1.5deg); filter: drop-shadow(0 0 10px #ff9e00); }
+      35% { transform: scale(1.18, 0.92) rotate(2deg); filter: drop-shadow(0 0 16px #ff6200); }
+      65% { transform: scale(0.94, 1.1) rotate(-1deg); filter: drop-shadow(0 0 12px #ffe600); }
+    }
+    .diya-flame {
+      transform-origin: bottom center;
+      animation: flameFlicker 1.4s ease-in-out infinite;
+    }
+
+    .nav-pill {
+      border: 2.5px solid #231215;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      box-shadow: 2px 3px 0px #231215;
+    }
+    .nav-pill.active {
+      background: linear-gradient(135deg, #ffd740 0%, #ff9100 100%) !important;
+      color: #12031c !important;
+      transform: translateY(-2px);
+      box-shadow: 3px 4px 0px #231215 !important;
+    }
+
+    /* Draggable Burning Matchstick Element */
+    #draggableMatch {
+      touch-action: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      cursor: grab;
+      filter: drop-shadow(0 4px 10px rgba(255, 120, 0, 0.5));
+      transition: transform 0.08s linear;
+      z-index: 50;
+    }
+    #draggableMatch:active {
+      cursor: grabbing;
+    }
+
+    /* Cracker sparks */
+    @keyframes sparkBurst {
+      0% { opacity: 1; transform: translate(0, 0) scale(0.8); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.4); }
+    }
+    .spark-dot {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      animation: sparkBurst 0.75s cubic-bezier(0.1, 0.85, 0.25, 1) forwards;
+      z-index: 999;
+    }
+
+    /* Matchstick dragging cursor */
+    .matchstick-holder {
+      cursor: grab;
+      touch-action: none;
+    }
+    .matchstick-holder:active {
+      cursor: grabbing;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center min-h-screen">
+
+  <!-- MAIN APP CONTAINER -->
+  <div id="mainApp" class="w-full max-w-[440px] min-h-screen flex flex-col justify-between shadow-2xl bg-[#fffcf3] border-x-0 sm:border-x-4 border-[#231215] relative overflow-hidden">
+
+    <!-- CASCADING FAIRY LIGHTS & DRAPES (Matching Sketch 1) -->
+    <div class="absolute inset-x-0 top-0 pointer-events-none z-30 overflow-hidden h-72">
+      <svg class="w-full h-full swag-lights" viewBox="0 0 400 240" fill="none" preserveAspectRatio="none">
+        <!-- Hanging loops -->
+        <path d="M -10 0 Q 30 55 70 0 Q 110 65 150 0 Q 190 70 230 0 Q 270 65 310 0 Q 350 55 410 0" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4 2"/>
+        <path d="M 0 0 Q 50 85 100 0 Q 150 90 200 0 Q 250 90 300 0 Q 350 85 400 0" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M 15 0 Q 60 40 105 0 Q 150 45 200 0 Q 250 45 300 0 Q 345 40 385 0" stroke="#ea580c" stroke-width="1.5" opacity="0.8"/>
+        
+        <!-- Long vertical curtain drop strands (from sketch) -->
+        <!-- Left vertical drops -->
+        <path d="M 25 35 Q 22 90 28 170" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="172" r="5" fill="#fde047" class="hanging-bulb"/>
+        <circle cx="26" cy="115" r="3.5" fill="#f43f5e" class="hanging-bulb"/>
+        <circle cx="24" cy="65" r="3.5" fill="#fbbf24" class="hanging-bulb"/>
+
+        <path d="M 55 45 Q 60 110 52 195" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="52" cy="197" r="5.5" fill="#fb923c" class="hanging-bulb"/>
+        <circle cx="58" cy="130" r="3.5" fill="#38bdf8" class="hanging-bulb"/>
+
+        <!-- Center vertical drops -->
+        <path d="M 130 50 Q 125 110 132 180" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="132" cy="182" r="5.5" fill="#facc15" class="hanging-bulb"/>
+        <circle cx="127" cy="120" r="3.5" fill="#4ade80" class="hanging-bulb"/>
+
+        <path d="M 215 50 Q 222 120 216 190" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="216" cy="192" r="5" fill="#f472b6" class="hanging-bulb"/>
+        <circle cx="220" cy="125" r="3.5" fill="#fde047" class="hanging-bulb"/>
+
+        <!-- Right vertical drops -->
+        <path d="M 335 45 Q 330 110 338 185" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="338" cy="187" r="5" fill="#fde047" class="hanging-bulb"/>
+        <circle cx="332" cy="110" r="3.5" fill="#f87171" class="hanging-bulb"/>
+
+        <path d="M 375 35 Q 380 95 372 165" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="372" cy="167" r="5.5" fill="#facc15" class="hanging-bulb"/>
+        <circle cx="378" cy="100" r="3.5" fill="#a78bfa" class="hanging-bulb"/>
+      </svg>
+    </div>
+
+    <!-- Header & Ambient Audio -->
+    <div class="w-full bg-[#1b0829] border-b-3 border-[#231215] relative overflow-hidden pt-1 pb-3 px-3 text-white z-40">
+      
+      <!-- Prominent Glowing Hanging Light Strands inside Header -->
+      <div class="absolute inset-x-0 top-0 pointer-events-none h-16 opacity-90">
+        <svg class="w-full h-full" viewBox="0 0 400 65" fill="none" preserveAspectRatio="none">
+          <path d="M 0 0 Q 50 35 100 0 Q 150 40 200 0 Q 250 40 300 0 Q 350 35 400 0" stroke="#f59e0b" stroke-width="2"/>
+          <path d="M 20 0 Q 70 45 120 0 Q 170 50 220 0 Q 270 50 320 0 Q 370 45 420 0" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5 3"/>
+          
+          <!-- Hanging glowing bulbs with festive drops -->
+          <line x1="50" y1="20" x2="50" y2="46" stroke="#fbbf24" stroke-width="1.5"/>
+          <circle cx="50" cy="49" r="4.5" fill="#fde047" class="hanging-bulb"/>
+
+          <line x1="105" y1="5" x2="105" y2="34" stroke="#f59e0b" stroke-width="1.5"/>
+          <circle cx="105" cy="37" r="4" fill="#ff7675" class="hanging-bulb"/>
+
+          <line x1="160" y1="24" x2="160" y2="52" stroke="#fbbf24" stroke-width="1.5"/>
+          <circle cx="160" cy="55" r="5" fill="#38bdf8" class="hanging-bulb"/>
+
+          <line x1="210" y1="6" x2="210" y2="38" stroke="#f59e0b" stroke-width="1.5"/>
+          <circle cx="210" cy="41" r="4.5" fill="#facc15" class="hanging-bulb"/>
+
+          <line x1="265" y1="24" x2="265" y2="50" stroke="#fbbf24" stroke-width="1.5"/>
+          <circle cx="265" cy="53" r="5" fill="#4ade80" class="hanging-bulb"/>
+
+          <line x1="320" y1="8" x2="320" y2="36" stroke="#f59e0b" stroke-width="1.5"/>
+          <circle cx="320" cy="39" r="4" fill="#f472b6" class="hanging-bulb"/>
+
+          <line x1="365" y1="20" x2="365" y2="48" stroke="#fbbf24" stroke-width="1.5"/>
+          <circle cx="365" cy="51" r="4.5" fill="#fef08a" class="hanging-bulb"/>
+        </svg>
+      </div>
+
+      <div class="flex items-center justify-between relative z-10 px-1 pt-2">
+        <div class="flex items-center gap-2">
+          <!-- Animated mini diya header icon -->
+          <svg class="w-8 h-8 drop-shadow" viewBox="0 0 32 32">
+            <ellipse cx="16" cy="22" rx="13" ry="5" fill="#c05621" stroke="#231215" stroke-width="1.8"/>
+            <path d="M 16 5 C 13 12, 14 17, 16 17 C 18 17, 19 12, 16 5 Z" fill="#ff9100" class="diya-flame"/>
+          </svg>
+          <div>
+            <span class="font-doodle text-xl font-bold tracking-wide text-amber-300 block leading-tight">Happy Diwali Prapti 🪔✨</span>
+            <span class="font-note text-[11px] text-amber-200/90 leading-none">for the prettiest artist & brightest soul ✨</span>
+          </div>
+        </div>
+
+        <!-- Soothing Ambient Music Toggle -->
+        <button id="musicToggleBtn" class="doodle-btn bg-gradient-to-r from-amber-300 to-orange-400 text-[#231215] px-3 py-1.5 text-xs font-bold font-doodle flex items-center gap-1.5 shadow">
+          <span id="musicIcon">🎵</span>
+          <span id="musicLabel">Calm Chimes</span>
+        </button>
+      </div>
+
+      <!-- Festive Header Decor (Filled Space) -->
+      <div class="flex items-center justify-between px-2 pt-2 text-[11px] font-doodle text-amber-200/95 border-t border-amber-500/30 mt-2">
+        <span class="flex items-center gap-1">🌸 <i>Warm Diyas & Sweet Smiles</i></span>
+        <span class="flex items-center gap-1.5">
+          <span class="animate-pulse">✨</span>
+          <span class="text-amber-300 font-bold">Kolkata Nights</span>
+          <span class="animate-pulse">✨</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Clear Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-[#fff3dc] border-b-3 border-[#231215] py-2 px-2.5 shadow-sm">
+      <div class="text-[11px] font-doodle text-slate-700 font-bold px-1 mb-1.5 flex items-center justify-between">
+        <span class="tracking-wider">✨ TAP TO EXPLORE PAGES:</span>
+        <span class="text-amber-900 font-extrabold text-[11px]" id="pageIndicator">Page 1 of 4</span>
+      </div>
+      <nav class="grid grid-cols-4 gap-1.5">
+        <button data-tab="diwali" class="nav-pill active bg-white py-1.5 px-0.5 text-center font-doodle text-xs">
+          🪔 Wish
+        </button>
+        <button data-tab="burn" class="nav-pill bg-white py-1.5 px-0.5 text-center font-doodle text-xs">
+          🔥 Burn 5
+        </button>
+        <button data-tab="patakha" class="nav-pill bg-white py-1.5 px-0.5 text-center font-doodle text-xs">
+          💥 Patakha
+        </button>
+        <button data-tab="kolkata" class="nav-pill bg-white py-1.5 px-0.5 text-center font-doodle text-xs">
+          🌆 Secret ✨
+        </button>
+      </nav>
+    </header>
+
+    <!-- MAIN BODY TABS -->
+    <main class="p-3.5 flex-grow flex flex-col gap-4 relative z-10">
+
+      <!-- ============================================== -->
+      <!-- TAB 1: 🪔 DIWALI WISH & RANGOLI (Sketch 1) -->
+      <!-- ============================================== -->
+      <section id="tab-diwali" class="tab-view flex flex-col gap-4">
+        
+        <!-- Main Warm Diya Card with Fixed Spacing -->
+        <div class="doodle-card p-5 bg-gradient-to-b from-[#fff3df] via-[#ffe5c7] to-[#ffd7b0] text-center relative overflow-hidden">
+          
+          <div class="inline-block bg-amber-200 border-2 border-[#231215] rounded-full px-3.5 py-0.5 text-xs font-doodle font-bold text-amber-950 mb-2 shadow-xs">
+            ✨ Shubh Deepavali, Prapti! ✨
+          </div>
+
+          <h1 class="text-2xl font-bold font-doodle text-[#231215] leading-snug mb-1">
+            To the Girl With the Prettiest Smile & Brightest Soul
+          </h1>
+          
+          <p class="font-note text-sm text-slate-800 leading-snug max-w-xs mx-auto">
+            "Your art creates pure magic, but your laugh is the real festival. May your days stay as warm, graceful, and dazzling as you are."
+          </p>
+
+          <!-- Interactive Glowing Diya Vector -->
+          <div class="relative w-56 h-40 mx-auto my-3 cursor-pointer select-none" id="diyaTouchArea">
+            <svg class="w-full h-full drop-shadow-md" viewBox="0 0 200 150">
+              <!-- Golden halo glow -->
+              <circle cx="100" cy="72" r="54" fill="#fde047" opacity="0.45" class="hanging-bulb"/>
+              
+              <text x="32" y="38" font-size="14">✨</text>
+              <text x="156" y="42" font-size="13">⭐</text>
+              <text x="24" y="105" font-size="13">🌟</text>
+              <text x="162" y="108" font-size="15">✨</text>
+
+              <!-- Flame with animated flicker -->
+              <g class="diya-flame" id="flameGroup">
+                <path d="M 100 15 C 80 48, 86 74, 100 74 C 114 74, 120 48, 100 15 Z" fill="#ff6a1a" stroke="#231215" stroke-width="3"/>
+                <path d="M 100 30 C 90 50, 93 68, 100 68 C 107 68, 110 50, 100 30 Z" fill="#ffbe2e"/>
+                <ellipse cx="100" cy="62" rx="4" ry="7" fill="#ffffff"/>
+              </g>
+
+              <!-- Clay Diya Base -->
+              <ellipse cx="100" cy="95" rx="64" ry="22" fill="#d95d39" stroke="#231215" stroke-width="3.5"/>
+              <ellipse cx="100" cy="88" rx="54" ry="14" fill="#e87050" stroke="#231215" stroke-width="2.5"/>
+              <ellipse cx="100" cy="86" rx="42" ry="8" fill="#ffd166" opacity="0.85"/>
+
+              <!-- Traditional scalloped dots on clay rim -->
+              <path d="M 58 96 Q 70 108 82 98 Q 94 109 100 98 Q 106 109 118 98 Q 130 108 142 96" stroke="#231215" stroke-width="2.5" fill="none"/>
+              <circle cx="80" cy="102" r="2.5" fill="#fef08a"/>
+              <circle cx="100" cy="102" r="2.5" fill="#fef08a"/>
+              <circle cx="120" cy="102" r="2.5" fill="#fef08a"/>
+
+              <line x1="100" y1="78" x2="100" y2="70" stroke="#231215" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Tap Diya Callout Banner -->
+          <div class="mb-3">
+            <span class="inline-block text-[11px] font-doodle font-bold text-amber-950 bg-white/95 border-2 border-[#231215] rounded-full py-1 px-4 shadow-sm">
+              👉 Tap the Diya to shower glowing warmth!
+            </span>
+          </div>
+
+          <!-- Interactive Action Buttons -->
+          <div class="flex justify-center items-center gap-2.5">
+            <button id="sparklerTouchBtn" class="doodle-btn bg-amber-300 hover:bg-amber-400 px-3.5 py-1.5 text-xs font-doodle font-bold text-slate-900 flex items-center gap-1.5">
+              <span>🎆</span> Golden Sparkler
+            </button>
+            <button id="mithaiBtn" class="doodle-btn bg-orange-200 hover:bg-orange-300 px-3.5 py-1.5 text-xs font-doodle font-bold text-slate-900 flex items-center gap-1.5">
+              <span>🥮</span> Virtual Kaju Katli
+            </button>
+          </div>
+        </div>
+
+        <!-- AUTHENTIC HAND-DRAWN RANGOLI SECTION (from Sketch 1) -->
+        <div class="doodle-card p-4 bg-[#fffdf5] text-center relative">
+          <div class="flex items-center justify-center gap-2 mb-1">
+            <span class="text-xs font-doodle font-bold text-amber-900">🌸 Hand-Drawn Diwali Rangoli for Prapti 🌸</span>
+          </div>
+          <p class="font-note text-xs text-slate-600 mb-2 max-w-xs mx-auto">
+            Drawn with marigold petals, pink chalk & festival love. Tap the Rangoli center to make it bloom!
+          </p>
+
+          <!-- Fully Visible Interactive Rangoli SVG -->
+          <div class="w-full max-w-[270px] h-[270px] mx-auto cursor-pointer relative select-none flex items-center justify-center" id="rangoliArea">
+            <svg class="w-full h-full drop-shadow-sm transition-transform duration-500 overflow-visible" id="rangoliSvg" viewBox="-10 -10 220 220">
+              <!-- Outer petal ring -->
+              <g id="rangoliPetals">
+                <circle cx="100" cy="100" r="82" fill="none" stroke="#231215" stroke-width="3" stroke-dasharray="6 4"/>
+                <circle cx="100" cy="100" r="76" fill="#fef08a" opacity="0.45"/>
+
+                <!-- 8 Scalloped Lotus Petals -->
+                <path d="M 100 20 Q 120 50 100 70 Q 80 50 100 20 Z" fill="#ff7675" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 180 100 Q 150 120 130 100 Q 150 80 180 100 Z" fill="#ff7675" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 100 180 Q 80 150 100 130 Q 120 150 100 180 Z" fill="#ff7675" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 20 100 Q 50 80 70 100 Q 50 120 20 100 Z" fill="#ff7675" stroke="#231215" stroke-width="2.5"/>
+                
+                <!-- Diagonal Petals -->
+                <path d="M 155 45 Q 145 80 122 78 Q 120 55 155 45 Z" fill="#fdcb6e" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 155 155 Q 120 145 122 122 Q 145 120 155 155 Z" fill="#fdcb6e" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 45 155 Q 55 120 78 122 Q 80 145 45 155 Z" fill="#fdcb6e" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 45 45 Q 80 55 78 78 Q 55 80 45 45 Z" fill="#fdcb6e" stroke="#231215" stroke-width="2.5"/>
+              </g>
+
+              <!-- Inner decorative circle -->
+              <circle cx="100" cy="100" r="38" fill="#55efc4" stroke="#231215" stroke-width="3"/>
+              <circle cx="100" cy="100" r="26" fill="#ffeaa7" stroke="#231215" stroke-width="2.5"/>
+
+              <!-- Central Diya on Rangoli -->
+              <g transform="translate(82, 85)">
+                <ellipse cx="18" cy="18" rx="14" ry="7" fill="#d95d39" stroke="#231215" stroke-width="2"/>
+                <path d="M 18 3 C 14 9, 15 15, 18 15 C 21 15, 22 9, 18 3 Z" fill="#ff9100" class="diya-flame"/>
+              </g>
+
+              <!-- Floral chalk powder dots -->
+              <circle cx="100" cy="28" r="3" fill="#ffffff" stroke="#231215" stroke-width="1"/>
+              <circle cx="172" cy="100" r="3" fill="#ffffff" stroke="#231215" stroke-width="1"/>
+              <circle cx="100" cy="172" r="3" fill="#ffffff" stroke="#231215" stroke-width="1"/>
+              <circle cx="28" cy="100" r="3" fill="#ffffff" stroke="#231215" stroke-width="1"/>
+            </svg>
+          </div>
+          <div id="rangoliBloomMsg" class="font-note text-xs font-bold text-amber-950 bg-amber-100/90 py-1.5 px-3.5 rounded-full border border-amber-300 mt-2 inline-block">
+            ✨ Tap to spin & shower fresh marigold petals!
+          </div>
+        </div>
+
+        <!-- Duo Scene: Prapti's White Doodle Kitty & Floppy Dog Friend -->
+        <div class="doodle-card p-4 bg-white text-center">
+          <div class="text-xs font-doodle font-bold text-amber-900 mb-1">
+            🐾 Warm friends celebrating quietly:
+          </div>
+          <div class="w-full h-40 relative mx-auto flex items-center justify-center cursor-pointer select-none" id="catDogDuoArea">
+            <svg class="w-full h-full" viewBox="0 0 280 145">
+              <path d="M 10 124 L 270 124" stroke="#231215" stroke-width="3" stroke-linecap="round"/>
+              <text x="30" y="136" font-size="12">🌸</text>
+              <text x="80" y="138" font-size="12">🌼</text>
+              <text x="200" y="138" font-size="12">🌸</text>
+              <text x="245" y="136" font-size="12">🌼</text>
+
+              <g transform="translate(125, 98)">
+                <ellipse cx="15" cy="18" rx="16" ry="8" fill="#d95d39" stroke="#231215" stroke-width="2.5"/>
+                <path d="M 15 2 C 10 9, 12 15, 15 15 C 18 15, 20 9, 15 2 Z" fill="#f59e0b" stroke="#231215" stroke-width="2" class="diya-flame"/>
+              </g>
+
+              <!-- Doodle Kitty -->
+              <g id="duoCat" class="transition-transform duration-300" transform="translate(25, 15)">
+                <path d="M 40 55 C 30 65, 25 100, 45 105 C 55 108, 70 108, 80 105 C 95 100, 90 65, 80 55 Z" fill="#ffffff" stroke="#231215" stroke-width="3.5"/>
+                <polygon points="36,55 42,28 55,50" fill="#ffffff" stroke="#231215" stroke-width="3" stroke-linejoin="round"/>
+                <polygon points="84,55 78,28 65,50" fill="#ffffff" stroke="#231215" stroke-width="3" stroke-linejoin="round"/>
+                <ellipse cx="44" cy="70" rx="4.5" ry="3" fill="#f472b6"/>
+                <ellipse cx="76" cy="70" rx="4.5" ry="3" fill="#f472b6"/>
+                <path d="M 46 64 Q 52 58 58 64" stroke="#231215" stroke-width="2.5" fill="none"/>
+                <path d="M 62 64 Q 68 58 74 64" stroke="#231215" stroke-width="2.5" fill="none"/>
+                <path d="M 58 72 Q 60 76 62 72" stroke="#231215" stroke-width="2" fill="none"/>
+                <!-- Marigold necklace -->
+                <circle cx="48" cy="85" r="3.5" fill="#f59e0b" stroke="#231215" stroke-width="1.5"/>
+                <circle cx="56" cy="88" r="3.5" fill="#ef4444" stroke="#231215" stroke-width="1.5"/>
+                <circle cx="64" cy="88" r="3.5" fill="#f59e0b" stroke="#231215" stroke-width="1.5"/>
+                <circle cx="72" cy="85" r="3.5" fill="#ef4444" stroke="#231215" stroke-width="1.5"/>
+              </g>
+
+              <!-- Doodle Dog Friend -->
+              <g id="duoDog" class="transition-transform duration-300" transform="translate(155, 15)">
+                <path d="M 40 55 C 28 65, 25 100, 42 105 C 55 108, 72 108, 85 105 C 98 100, 92 65, 80 55 Z" fill="#ffffff" stroke="#231215" stroke-width="3.5"/>
+                <path d="M 36 50 C 22 55, 18 78, 30 84 C 38 82, 38 68, 38 52" fill="#fed7aa" stroke="#231215" stroke-width="3"/>
+                <path d="M 84 50 C 98 55, 102 78, 90 84 C 82 82, 82 68, 82 52" fill="#fed7aa" stroke="#231215" stroke-width="3"/>
+                <circle cx="48" cy="66" r="3.5" fill="#231215"/>
+                <circle cx="72" cy="66" r="3.5" fill="#231215"/>
+                <ellipse cx="42" cy="74" rx="4" ry="2.5" fill="#f472b6"/>
+                <ellipse cx="78" cy="74" rx="4" ry="2.5" fill="#f472b6"/>
+                <ellipse cx="60" cy="72" rx="4" ry="2.5" fill="#231215"/>
+                <path d="M 55 76 Q 60 82 65 76" stroke="#231215" stroke-width="2.5" fill="none"/>
+                <path d="M 88 95 Q 102 85 98 75" stroke="#231215" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              </g>
+
+              <g id="petHearts" opacity="0" class="transition-opacity duration-300">
+                <text x="135" y="52" font-size="18">💖</text>
+                <text x="118" y="35" font-size="14">✨</text>
+                <text x="152" y="35" font-size="14">🪔</text>
+              </g>
+            </svg>
+          </div>
+          <div id="petDialogueMsg" class="font-note text-xs text-amber-950 font-bold bg-amber-100/90 p-2 rounded-xl border border-amber-300">
+            "Both little guys agree: Prapti's smile lights up the room brighter than all the diyas combined!"
+          </div>
+        </div>
+
+        <!-- Cozy Next Button -->
+        <button class="next-step-btn doodle-btn bg-amber-200 hover:bg-amber-300 py-2.5 px-4 text-center font-doodle font-bold text-sm text-amber-950 flex items-center justify-center gap-2 mt-1 shadow-sm" data-next="burn">
+          <span>Burn 5 Animated Crackers Next</span> <span class="text-base">⟶</span>
+        </button>
+
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 2: 🔥 MANUAL MATCHSTICK IGNITER (Sketch 2) -->
+      <!-- ============================================== -->
+      <section id="tab-burn" class="tab-view hidden flex flex-col gap-4">
+        
+        <div class="doodle-card p-4 bg-gradient-to-b from-[#fff2de] to-[#ffe2bf] text-center">
+          <div class="inline-block bg-orange-200 border-2 border-[#231215] rounded-full px-3 py-0.5 text-xs font-doodle font-bold text-orange-950 mb-1">
+            🔥 Hand-Crafted Patakha Ignition
+          </div>
+          <h2 class="text-2xl font-doodle font-bold text-slate-900 leading-tight">Pick the Matchstick & Light One by One!</h2>
+          <p class="font-note text-xs text-slate-700 leading-snug">
+            Light each patakha individually with the burning matchstick to unlock a special compliment crafted just for you 🪔✨
+          </p>
+          <!-- Stepper Pills -->
+          <div class="flex justify-center items-center gap-2 mt-3" id="crackerSteppers">
+            <button class="step-indicator active w-8 h-8 rounded-full border-2 border-[#231215] bg-amber-400 text-xs font-bold font-doodle flex items-center justify-center shadow-xs" data-step="0">1</button>
+            <button class="step-indicator w-8 h-8 rounded-full border-2 border-[#231215] bg-white text-xs font-bold font-doodle flex items-center justify-center shadow-xs" data-step="1">2</button>
+            <button class="step-indicator w-8 h-8 rounded-full border-2 border-[#231215] bg-white text-xs font-bold font-doodle flex items-center justify-center shadow-xs" data-step="2">3</button>
+            <button class="step-indicator w-8 h-8 rounded-full border-2 border-[#231215] bg-white text-xs font-bold font-doodle flex items-center justify-center shadow-xs" data-step="3">4</button>
+            <button class="step-indicator w-8 h-8 rounded-full border-2 border-[#231215] bg-white text-xs font-bold font-doodle flex items-center justify-center shadow-xs" data-step="4">5</button>
+          </div>
+        </div>
+
+        <!-- DRAGGABLE BURNING MATCHSTICK STATION (from Sketch 2) -->
+        <div class="doodle-card p-4 bg-[#fff9ee] flex flex-col items-center justify-center gap-2 border-2 border-amber-500 shadow-md relative">
+          <div class="flex items-center justify-between w-full px-2">
+            <div>
+              <span class="text-xs font-doodle font-bold text-amber-950 block" id="matchInstruction">
+                👇 Hold & drag the matchstick to the fuse!
+              </span>
+              <span class="text-[11px] font-note text-slate-500">
+                (Or simply tap the cracker screen to ignite)
+              </span>
+            </div>
+            <div class="bg-amber-200 text-amber-950 text-[10px] font-doodle font-bold px-2 py-0.5 rounded-full border border-amber-400">
+              🔥 Burning Flame
+            </div>
+          </div>
+
+          <!-- THE DRAGGABLE MATCHSTICK -->
+          <div id="draggableMatch" class="w-48 h-20 bg-amber-100/70 border-2 border-dashed border-amber-400 rounded-2xl flex items-center justify-center relative touch-none cursor-grab active:cursor-grabbing">
+            <svg class="w-40 h-16 pointer-events-none" viewBox="0 0 160 60">
+              <!-- Wooden stick -->
+              <line x1="20" y1="30" x2="110" y2="30" stroke="#b45309" stroke-width="7" stroke-linecap="round"/>
+              <line x1="20" y1="30" x2="110" y2="30" stroke="#fef3c7" stroke-width="2" opacity="0.6"/>
+              
+              <!-- Match sulfur head -->
+              <ellipse cx="114" cy="30" rx="7" ry="6" fill="#881337"/>
+              
+              <!-- Glowing manual flame (matching sketch 2) -->
+              <g transform="translate(120, 30)">
+                <path d="M 0 0 C 14 -10, 22 -26, 18 -32 C 10 -28, 4 -16, 0 0 Z" fill="#ff6a1a" class="diya-flame"/>
+                <path d="M 0 0 C 9 -7, 15 -18, 13 -23 C 7 -20, 3 -11, 0 0 Z" fill="#ffd700"/>
+                <ellipse cx="4" cy="-5" rx="3" ry="5" fill="#ffffff" opacity="0.8"/>
+              </g>
+            </svg>
+            <div class="absolute bottom-1 right-3 text-[10px] font-doodle font-bold text-amber-900 bg-white/90 px-1.5 rounded border border-amber-300">
+              ✋ DRAG ME
+            </div>
+          </div>
+        </div>
+
+        <!-- FOCUSED ONE-BY-ONE CRACKER ARENA -->
+        <div id="singleCrackerArena" class="relative">
+
+          <!-- 1. Phuljhadi (Hand Sparkler) -->
+          <div class="cracker-card doodle-card p-4 bg-[#fffef7] flex flex-col gap-3 cursor-pointer transition-all" data-index="0" data-type="phuljhadi" data-lit="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 border-2 border-[#231215] flex items-center justify-center font-bold text-base">
+                  1
+                </div>
+                <div>
+                  <h4 class="font-doodle text-lg font-bold text-slate-900 leading-none">Golden Phuljhadi (Sparkler)</h4>
+                  <p class="font-note text-xs text-slate-600 mt-0.5" id="desc-phuljhadi">Sparkles bright like your artistic flair!</p>
+                </div>
+              </div>
+              <div class="fuse-tag bg-amber-200 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-slate-900 shadow-xs">
+                Fuse Ready 🔥
+              </div>
+            </div>
+
+            <!-- Canvas container for spark animation -->
+            <div class="w-full h-32 bg-[#1a0c24] rounded-2xl border-3 border-[#231215] relative overflow-hidden flex items-center justify-center shadow-inner">
+              <canvas id="canvas-phuljhadi" class="w-full h-full"></canvas>
+            </div>
+
+            <!-- Dedicated Compliment Note for Cracker 1 -->
+            <div class="p-3 bg-amber-50 rounded-xl border-2 border-amber-300/80 text-left">
+              <span class="text-xs font-doodle font-bold text-amber-900 flex items-center gap-1">
+                <span>✨</span> Compliment #1 for Prapti:
+              </span>
+              <p class="font-note text-xs text-slate-700 leading-snug mt-1">
+                "The way you sketch and bring soft, cozy doodles to life with that effortless magic... you make the world look ten times gentler."
+              </p>
+            </div>
+
+            <!-- Next Cracker Button (Revealed after burning) -->
+            <button class="btn-next-cracker hidden doodle-btn bg-amber-300 hover:bg-amber-400 py-2.5 px-4 font-doodle font-bold text-sm text-slate-900 flex items-center justify-center gap-1.5" data-goto="1">
+              <span>Light Patakha #2 (Anar)</span> <span>⟶</span>
+            </button>
+          </div>
+
+          <!-- 2. Sparkling Anar (Flowerpot Fountain) -->
+          <div class="cracker-card doodle-card p-4 bg-[#fffef7] hidden flex-col gap-3 cursor-pointer transition-all" data-index="1" data-type="anar" data-lit="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-orange-100 border-2 border-[#231215] flex items-center justify-center font-bold text-base">
+                  2
+                </div>
+                <div>
+                  <h4 class="font-doodle text-lg font-bold text-slate-900 leading-none">Sparkling Anar (Cone Fountain)</h4>
+                  <p class="font-note text-xs text-slate-600 mt-0.5" id="desc-anar">Shoots a tall golden fountain into the night</p>
+                </div>
+              </div>
+              <div class="fuse-tag bg-amber-200 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-slate-900 shadow-xs">
+                Fuse Ready 🔥
+              </div>
+            </div>
+
+            <div class="w-full h-32 bg-[#1a0c24] rounded-2xl border-3 border-[#231215] relative overflow-hidden flex items-center justify-center shadow-inner">
+              <canvas id="canvas-anar" class="w-full h-full"></canvas>
+            </div>
+
+            <div class="p-3 bg-orange-50 rounded-xl border-2 border-orange-300/80 text-left">
+              <span class="text-xs font-doodle font-bold text-orange-950 flex items-center gap-1">
+                <span>🌋</span> Compliment #2 for Prapti:
+              </span>
+              <p class="font-note text-xs text-slate-700 leading-snug mt-1">
+                "Your laugh is genuinely the warmest sound ever. Just like an anar lighting up the dark, it instantly brightens anyone's worst day."
+              </p>
+            </div>
+
+            <button class="btn-next-cracker hidden doodle-btn bg-orange-300 hover:bg-orange-400 py-2.5 px-4 font-doodle font-bold text-sm text-slate-900 flex items-center justify-center gap-1.5" data-goto="2">
+              <span>Light Patakha #3 (Chakri)</span> <span>⟶</span>
+            </button>
+          </div>
+
+          <!-- 3. Ground Spinner Chakri -->
+          <div class="cracker-card doodle-card p-4 bg-[#fffef7] hidden flex-col gap-3 cursor-pointer transition-all" data-index="2" data-type="chakri" data-lit="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-yellow-100 border-2 border-[#231215] flex items-center justify-center font-bold text-base">
+                  3
+                </div>
+                <div>
+                  <h4 class="font-doodle text-lg font-bold text-slate-900 leading-none">Zipping Ground Chakri</h4>
+                  <p class="font-note text-xs text-slate-600 mt-0.5" id="desc-chakri">Fast spinning rainbow fire whirl</p>
+                </div>
+              </div>
+              <div class="fuse-tag bg-amber-200 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-slate-900 shadow-xs">
+                Fuse Ready 🔥
+              </div>
+            </div>
+
+            <div class="w-full h-32 bg-[#1a0c24] rounded-2xl border-3 border-[#231215] relative overflow-hidden flex items-center justify-center shadow-inner">
+              <canvas id="canvas-chakri" class="w-full h-full"></canvas>
+            </div>
+
+            <div class="p-3 bg-yellow-50 rounded-xl border-2 border-yellow-300/80 text-left">
+              <span class="text-xs font-doodle font-bold text-amber-950 flex items-center gap-1">
+                <span>🌀</span> Compliment #3 for Prapti:
+              </span>
+              <p class="font-note text-xs text-slate-700 leading-snug mt-1">
+                "You have this playful, sassy energy that’s completely unmatched. You turn simple everyday moments into cute, fun memories."
+              </p>
+            </div>
+
+            <button class="btn-next-cracker hidden doodle-btn bg-yellow-300 hover:bg-yellow-400 py-2.5 px-4 font-doodle font-bold text-sm text-slate-900 flex items-center justify-center gap-1.5" data-goto="3">
+              <span>Light Patakha #4 (Rocket)</span> <span>⟶</span>
+            </button>
+          </div>
+
+          <!-- 4. Sky Rocket -->
+          <div class="cracker-card doodle-card p-4 bg-[#fffef7] hidden flex-col gap-3 cursor-pointer transition-all" data-index="3" data-type="rocket" data-lit="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-rose-100 border-2 border-[#231215] flex items-center justify-center font-bold text-base">
+                  4
+                </div>
+                <div>
+                  <h4 class="font-doodle text-lg font-bold text-slate-900 leading-none">Doodle Sky Rocket</h4>
+                  <p class="font-note text-xs text-slate-600 mt-0.5" id="desc-rocket">Whooshes high to paint the stars</p>
+                </div>
+              </div>
+              <div class="fuse-tag bg-amber-200 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-slate-900 shadow-xs">
+                Fuse Ready 🔥
+              </div>
+            </div>
+
+            <div class="w-full h-32 bg-[#1a0c24] rounded-2xl border-3 border-[#231215] relative overflow-hidden flex items-center justify-center shadow-inner">
+              <canvas id="canvas-rocket" class="w-full h-full"></canvas>
+            </div>
+
+            <div class="p-3 bg-rose-50 rounded-xl border-2 border-rose-300/80 text-left">
+              <span class="text-xs font-doodle font-bold text-rose-950 flex items-center gap-1">
+                <span>🚀</span> Compliment #4 for Prapti:
+              </span>
+              <p class="font-note text-xs text-slate-700 leading-snug mt-1">
+                "No matter where you are or what room you walk into, you are genuinely the prettiest girl in the room without even trying."
+              </p>
+            </div>
+
+            <button class="btn-next-cracker hidden doodle-btn bg-rose-300 hover:bg-rose-400 py-2.5 px-4 font-doodle font-bold text-sm text-slate-900 flex items-center justify-center gap-1.5" data-goto="4">
+              <span>Light Patakha #5 (Garland)</span> <span>⟶</span>
+            </button>
+          </div>
+
+          <!-- 5. 1000-Wala Pop Garland -->
+          <div class="cracker-card doodle-card p-4 bg-[#fffef7] hidden flex-col gap-3 cursor-pointer transition-all" data-index="4" data-type="lad" data-lit="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-red-100 border-2 border-[#231215] flex items-center justify-center font-bold text-base">
+                  5
+                </div>
+                <div>
+                  <h4 class="font-doodle text-lg font-bold text-slate-900 leading-none">1000-String Pop Garland</h4>
+                  <p class="font-note text-xs text-slate-600 mt-0.5" id="desc-lad">Rhythmic happy pops that crackle non-stop!</p>
+                </div>
+              </div>
+              <div class="fuse-tag bg-amber-200 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-slate-900 shadow-xs">
+                Fuse Ready 🔥
+              </div>
+            </div>
+
+            <div class="w-full h-32 bg-[#1a0c24] rounded-2xl border-3 border-[#231215] relative overflow-hidden flex items-center justify-center shadow-inner">
+              <canvas id="canvas-lad" class="w-full h-full"></canvas>
+            </div>
+
+            <div class="p-3 bg-red-50 rounded-xl border-2 border-red-300/80 text-left">
+              <span class="text-xs font-doodle font-bold text-red-950 flex items-center gap-1">
+                <span>🧨</span> Compliment #5 for Prapti:
+              </span>
+              <p class="font-note text-xs text-slate-700 leading-snug mt-1">
+                "You are unforgettable. A 1000/10 human being who deserves all the love, happiness, peace, and endless sweets this universe holds."
+              </p>
+            </div>
+
+            <button class="next-step-btn doodle-btn bg-red-300 hover:bg-red-400 py-2.5 px-4 font-doodle font-bold text-sm text-slate-900 flex items-center justify-center gap-1.5 mt-2 shadow-sm" data-next="patakha">
+              <span>All 5 Lit! Read Official Patakha Warning</span> <span>⟶</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Direct Next Navigation -->
+        <button class="next-step-btn doodle-btn bg-orange-200 hover:bg-orange-300 py-2.5 px-4 text-center font-doodle font-bold text-sm text-orange-950 flex items-center justify-center gap-2 mt-1 shadow-sm" data-next="patakha">
+          <span>Read The Real Patakha Warning</span> <span class="text-base">⟶</span>
+        </button>
+
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 3: 💥 THE REAL PATAKHA (SAFETY WARNING) -->
+      <!-- ============================================== -->
+      <section id="tab-patakha" class="tab-view hidden flex flex-col gap-4">
+        
+        <div class="doodle-card p-5 bg-gradient-to-b from-[#ffe5e5] via-[#fff1da] to-[#ffe7ee] text-center relative">
+          <div class="inline-block bg-rose-200 border-2 border-[#231215] rounded-full px-3 py-0.5 text-xs font-doodle font-bold text-rose-950 mb-2">
+            ⚠️ OFFICIAL FESTIVE ADVISORY ⚠️
+          </div>
+          
+          <h2 class="text-2xl font-doodle font-bold text-rose-900 leading-tight mb-2">
+            "Stay safe from fire... as you’re the real patakha!" 💥✨
+          </h2>
+
+          <p class="font-note text-sm text-slate-700 leading-snug">
+            Certified 1000/1000 firework alert: keep a safe distance from fire crackers, because the real spark of Kolkata is already right here!
+          </p>
+
+          <!-- Interactive Sassy White Cat -->
+          <div class="relative w-44 h-44 mx-auto my-2 cursor-pointer float-anim" id="patakhaDoodleArea">
+            <svg class="w-full h-full drop-shadow-sm" viewBox="0 0 160 160">
+              <polygon points="80,15 95,48 135,40 110,68 140,95 105,105 115,145 80,120 45,145 55,105 20,95 50,68 25,40 65,48" fill="#fde047" stroke="#231215" stroke-width="3" opacity="0.65"/>
+              
+              <g transform="translate(15, 10)">
+                <path d="M 45 65 C 30 75, 25 115, 45 125 C 55 130, 75 130, 85 125 C 105 115, 100 75, 85 65 Z" fill="#ffffff" stroke="#231215" stroke-width="4"/>
+                <polygon points="35,68 45,35 60,60" fill="#ffffff" stroke="#231215" stroke-width="3.5" stroke-linejoin="round"/>
+                <polygon points="95,68 85,35 70,60" fill="#ffffff" stroke="#231215" stroke-width="3.5" stroke-linejoin="round"/>
+                <polygon points="39,63 46,43 56,58" fill="#fca5a5"/>
+                <polygon points="91,63 84,43 74,58" fill="#fca5a5"/>
+                <ellipse cx="44" cy="85" rx="5" ry="3.5" fill="#f472b6"/>
+                <ellipse cx="86" cy="85" rx="5" ry="3.5" fill="#f472b6"/>
+                <path d="M 40 78 Q 48 72 54 80" stroke="#231215" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                <path d="M 76 80 Q 82 72 90 78" stroke="#231215" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                <ellipse cx="65" cy="88" rx="4" ry="6" fill="#f43f5e" stroke="#231215" stroke-width="2"/>
+                <ellipse cx="65" cy="65" rx="3.5" ry="6" fill="#dc2626"/>
+                <circle cx="65" cy="65" r="1.5" fill="#fde047"/>
+                <line x1="32" y1="80" x2="20" y2="78" stroke="#231215" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="32" y1="86" x2="18" y2="88" stroke="#231215" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="98" y1="80" x2="110" y2="78" stroke="#231215" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="98" y1="86" x2="112" y2="88" stroke="#231215" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="85" y1="100" x2="120" y2="70" stroke="#78716c" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="122" cy="68" r="4" fill="#fbbf24"/>
+              </g>
+            </svg>
+            <span class="block text-[11px] font-doodle font-bold text-rose-900 bg-white border border-[#231215] rounded-full py-0.5 px-2.5 mt-1 mx-auto max-w-fit shadow-xs">
+              👉 Tap the Patakha Cat for sparkles!
+            </span>
+          </div>
+
+          <div class="mt-3 space-y-2 text-left">
+            <div class="p-2.5 rounded-xl border-2 border-[#231215] bg-white flex items-center gap-2">
+              <span class="text-xl">1️⃣</span>
+              <p class="font-note text-xs text-slate-800">
+                <strong>Rule 1:</strong> Keep 10 feet distance from open fires—we need every single hand safe to keep drawing art.
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-[#231215] bg-white flex items-center gap-2">
+              <span class="text-xl">2️⃣</span>
+              <p class="font-note text-xs text-slate-800">
+                <strong>Rule 2:</strong> Eating 5+ pieces of kaju katli counts as official festival safety protocol.
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-[#231215] bg-white flex items-center gap-2">
+              <span class="text-xl">3️⃣</span>
+              <p class="font-note text-xs text-slate-800">
+                <strong>Rule 3:</strong> You don’t need any crackers outside when your talent already outshines the city lights.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Navigation -->
+        <button class="next-step-btn doodle-btn bg-pink-200 hover:bg-pink-300 py-2.5 px-4 text-center font-doodle font-bold text-sm text-pink-950 flex items-center justify-center gap-2 mt-1 shadow-sm" data-next="kolkata">
+          <span>A Secret Diwali Thought</span> <span class="text-base">⟶</span>
+        </button>
+
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 4: ✨ SECRET KOLKATA LIGHTS INVITATION -->
+      <!-- ============================================== -->
+      <section id="tab-kolkata" class="tab-view hidden flex flex-col gap-4">
+        
+        <div class="doodle-card p-5 bg-gradient-to-b from-[#fbf2e3] via-[#ffede3] to-[#ffe8d6] text-center relative overflow-hidden">
+          
+          <div class="inline-block bg-amber-200 border-2 border-[#231215] rounded-full px-3 py-0.5 text-xs font-doodle font-bold text-amber-950 mb-2">
+            🌆 Secret Glow Corner
+          </div>
+
+          <h2 class="text-2xl font-doodle font-bold text-slate-900 leading-tight mb-2">
+            "Want to go watch the Kolkata Diwali lights together?" ✨
+          </h2>
+
+          <!-- Kolkata Skyline & Howrah Bridge Silhouette -->
+          <div class="relative w-full h-36 mx-auto my-1 bg-[#180c24] rounded-2xl border-3 border-[#231215] p-2 overflow-hidden flex flex-col justify-end">
+            <svg class="w-full h-full" viewBox="0 0 320 120">
+              <circle cx="280" cy="30" r="14" fill="#fef08a" opacity="0.9"/>
+              <circle cx="285" cy="27" r="13" fill="#180c24"/>
+
+              <text x="40" y="25" font-size="10" fill="#fff">✨</text>
+              <text x="110" y="35" font-size="8" fill="#fff">⭐</text>
+              <text x="190" y="20" font-size="10" fill="#fff">✨</text>
+              <text x="240" y="45" font-size="8" fill="#fff">⭐</text>
+
+              <path d="M 40 100 L 90 40 L 140 100" stroke="#ffd166" stroke-width="2.5" fill="none"/>
+              <path d="M 140 100 L 190 40 L 240 100" stroke="#ffd166" stroke-width="2.5" fill="none"/>
+              <line x1="20" y1="100" x2="300" y2="100" stroke="#ff9f1c" stroke-width="3"/>
+              <line x1="90" y1="40" x2="190" y2="40" stroke="#ffd166" stroke-width="2"/>
+
+              <path d="M 20 110 Q 70 115 120 110 Q 170 105 220 110 Q 270 115 300 110" stroke="#ffb703" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+              <g transform="translate(140, 75)">
+                <circle cx="8" cy="8" r="6" fill="#fff"/>
+                <path d="M 3 14 L 13 14 L 11 25 L 5 25 Z" fill="#fff"/>
+                <circle cx="24" cy="8" r="6" fill="#fff"/>
+                <path d="M 19 14 L 29 14 L 27 25 L 21 25 Z" fill="#fff"/>
+                <line x1="11" y1="16" x2="21" y2="16" stroke="#231215" stroke-width="1.5"/>
+              </g>
+            </svg>
+            <div class="text-[10px] text-amber-200 font-doodle text-center absolute bottom-1 left-0 right-0">
+              Ghats, Park Street fairy lights, & quiet tea 🪔
+            </div>
+          </div>
+
+          <p class="font-note text-sm text-slate-700 leading-snug my-2">
+            Just like we had talked about earlier—we could meet up during this Diwali season, walk around, grab warm treats, and watch the whole city lit up under the fairy lights.
+          </p>
+
+          <!-- IMPORTANT USER PROMPT: TELL HER TO TAP YES OR NO -->
+          <div class="bg-amber-100/90 border-2 border-dashed border-amber-500 rounded-xl p-3 my-2 text-center">
+            <span class="text-xs font-doodle font-bold text-amber-950 block">
+              👉 Please tap either YES or Maybe another time below!
+            </span>
+            <p class="font-note text-[11px] text-amber-900 mt-0.5">
+              It would really help a lot so I know your comfort level, no matter what your answer is 💛
+            </p>
+          </div>
+
+          <p class="font-note text-xs text-slate-500 italic">
+            (Zero pressure at all—purely if you feel like it and want to!)
+          </p>
+
+          <!-- YES / NO DECISION BUTTONS -->
+          <div id="choiceContainer" class="flex flex-col gap-2 mt-3">
+            <div class="flex items-center gap-3">
+              <button id="btnYes" class="doodle-btn flex-1 bg-emerald-200 hover:bg-emerald-300 py-3 font-doodle font-bold text-base text-emerald-950 flex items-center justify-center gap-1.5 shadow-md">
+                <span>🏮</span> YES, LET’S GO!
+              </button>
+              
+              <button id="btnNo" class="doodle-btn flex-1 bg-amber-100 hover:bg-amber-200 py-3 font-doodle font-bold text-sm text-slate-800 flex items-center justify-center gap-1">
+                <span>🍵</span> Maybe another time
+              </button>
+            </div>
+          </div>
+
+          <!-- RESPONSE CARD: IF YES (Directly connected to Formspree) -->
+          <div id="responseYes" class="hidden mt-4 p-4 doodle-card bg-emerald-50 text-left border-emerald-800">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-2xl">🎉</span>
+              <h4 class="font-doodle text-xl font-bold text-emerald-900">YAY! Kolkata lights it is! 🪔</h4>
+            </div>
+            <p class="font-note text-xs text-slate-800 leading-relaxed mb-2">
+              Kolkata looks magical around this time. Your reply has been noted softly—I'll reach out so we can plan a cozy evening!
+            </p>
+            <div class="flex flex-col gap-2 mt-3">
+              <div class="text-[11px] font-doodle text-emerald-800 bg-emerald-100/90 py-1 px-2.5 rounded-lg border border-emerald-300 inline-block" id="statusNotification">
+                ✨ Answer registered quietly to Pritam's inbox!
+              </div>
+              <!-- Optional direct SMS fallback -->
+              <a href="sms:8777010723?&body=Hey!%20Yes,%20let's%20go%20see%20the%20Kolkata%20Diwali%20lights%20together!%20%F0%9F%AA%94%E2%9C%A8" class="doodle-btn text-center bg-emerald-200 hover:bg-emerald-300 py-1.5 px-3 text-xs font-doodle font-bold text-emerald-950">
+                💬 Or tap here to send a quick SMS confirmation
+              </a>
+            </div>
+          </div>
+
+          <!-- RESPONSE CARD: IF NO -->
+          <div id="responseNo" class="hidden mt-4 p-4 doodle-card bg-amber-50 text-left border-amber-800">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-2xl">☕</span>
+              <h4 class="font-doodle text-lg font-bold text-amber-900">Completely understand! 💛</h4>
+            </div>
+            <p class="font-note text-xs text-slate-700 leading-relaxed mb-2">
+              No pressure whatsoever! Have the sweetest, coziest Diwali, enjoy all the sweets, and keep making that breathtaking art.
+            </p>
+            <div class="text-[11px] font-doodle text-amber-800 bg-amber-100 py-1 px-2.5 rounded-lg border border-amber-300 inline-block">
+              ✨ Wish registered with warmth!
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SPECIAL CLOSER HEARTFELT NOTE FOR PRAPTI -->
+        <div class="doodle-card p-5 bg-[#fffaf0] border-2 border-amber-400 text-left">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-xl">💌</span>
+            <h4 class="font-doodle text-lg font-bold text-slate-900">A Quiet Note From the Heart</h4>
+          </div>
+          <p class="font-note text-xs text-slate-700 leading-relaxed">
+            "Wish you a very, very happy and glowing Diwali, Prapti! 🪔 I'm not good at making handmade gifts my nunu, but I'll always build websites for you :)"
+          </p>
+          <div class="mt-2 text-right">
+            <span class="font-doodle text-xs font-bold text-amber-900">— always your #1 hype man 🌸</span>
+          </div>
+        </div>
+
+        <!-- Sky Lantern Release -->
+        <div class="doodle-card p-4 bg-[#fffef5] text-center">
+          <h4 class="font-doodle text-lg font-bold text-slate-800 mb-1">Send a Sky Lantern for Prapti</h4>
+          <p class="font-note text-xs text-slate-600 mb-2">
+            Tap to release quiet floating lanterns into the night:
+          </p>
+          <button id="releaseLanternBtn" class="doodle-btn bg-rose-200 hover:bg-rose-300 text-rose-950 font-doodle text-sm font-bold px-4 py-1.5">
+            🏮 Release Diwali Lanterns
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Cozy Clean Footer -->
+    <footer class="py-3 text-center text-[11px] text-slate-500 font-note border-t border-amber-200/80 bg-white/70">
+      <p>Hand-crafted with warm diyas, fairy lights & festival sweetness.</p>
+      <p class="text-slate-400 mt-0.5">For Prapti ✨ The Real Patakha.</p>
+    </footer>
+
+  </div>
+
+  <!-- Sky Lanterns Floating Overlay -->
+  <div id="skyOverlay" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
+
+  <!-- JAVASCRIPT LOGIC (CLEAN & COMPLETE) -->
+  <script>
+    /* =========================================================
+       1. WEB AUDIO SYNTHESIZER (Calm Pentatonic Chimes)
+       ========================================================= */
+    let audioCtx = null;
+    let isMusicPlaying = false;
+    let musicInterval = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playTone(freq, duration = 0.5, type = 'sine', gainVal = 0.08) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(gainVal, audioCtx.currentTime + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function playSparkleSound() {
+      initAudio();
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+        setTimeout(() => playTone(freq, 0.35, 'sine', 0.07), idx * 60);
+      });
+    }
+
+    function playFestiveChord() {
+      initAudio();
+      const chord = [392.00, 493.88, 587.33, 783.99]; // G major festive warm
+      chord.forEach(f => playTone(f, 0.9, 'triangle', 0.06));
+    }
+
+    function playPopSound() {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(260, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.09);
+
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.09);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.1);
+      } catch (e) {}
+    }
+
+    // Ambient loop (Indian Raag Bhairav / Evening pentatonic bells)
+    const melody = [329.63, 392.00, 440.00, 523.25, 659.25, 523.25, 440.00, 392.00];
+    let noteIdx = 0;
+
+    function startAmbientMusic() {
+      initAudio();
+      isMusicPlaying = true;
+      document.getElementById('musicLabel').textContent = "Mute Chimes";
+      document.getElementById('musicIcon').textContent = "🔔";
+
+      musicInterval = setInterval(() => {
+        playTone(melody[noteIdx % melody.length], 1.2, 'sine', 0.05);
+        if (noteIdx % 3 === 0) {
+          setTimeout(() => playTone(melody[(noteIdx + 2) % melody.length] * 0.5, 1.4, 'triangle', 0.03), 200);
+        }
+        noteIdx++;
+      }, 750);
+    }
+
+    function stopAmbientMusic() {
+      isMusicPlaying = false;
+      document.getElementById('musicLabel').textContent = "Calm Chimes";
+      document.getElementById('musicIcon').textContent = "🎵";
+      clearInterval(musicInterval);
+    }
+
+    document.getElementById('musicToggleBtn').addEventListener('click', () => {
+      initAudio();
+      if (isMusicPlaying) stopAmbientMusic();
+      else startAmbientMusic();
+    });
+
+    /* =========================================================
+       2. TAB NAVIGATION & CANVAS INITIALIZATION
+       ========================================================= */
+    const tabViews = document.querySelectorAll('.tab-view');
+    const navPills = document.querySelectorAll('.nav-pill');
+    const pageIndicator = document.getElementById('pageIndicator');
+
+    const tabOrder = ['diwali', 'burn', 'patakha', 'kolkata'];
+
+    function switchTab(targetTab) {
+      initAudio();
+      tabViews.forEach(v => {
+        v.classList.add('hidden');
+      });
+      const activeSection = document.getElementById('tab-' + targetTab);
+      if (activeSection) {
+        activeSection.classList.remove('hidden');
+      }
+
+      navPills.forEach(p => {
+        if (p.getAttribute('data-tab') === targetTab) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+
+      const idx = tabOrder.indexOf(targetTab);
+      if (idx !== -1 && pageIndicator) {
+        pageIndicator.textContent = `Page ${idx + 1} of 4`;
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (targetTab === 'burn') {
+        setTimeout(initCrackerCanvases, 100);
+      }
+    }
+
+    navPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        switchTab(pill.getAttribute('data-tab'));
+      });
+    });
+
+    document.querySelectorAll('.next-step-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const nextTarget = btn.getAttribute('data-next');
+        switchTab(nextTarget);
+      });
+    });
+
+    /* =========================================================
+       2B. ONE-BY-ONE CRACKER STEPPER LOGIC
+       ========================================================= */
+    let currentCrackerIndex = 0;
+    const crackerCards = document.querySelectorAll('.cracker-card');
+    const stepIndicators = document.querySelectorAll('.step-indicator');
+
+    function showCrackerAt(index) {
+      currentCrackerIndex = index;
+      crackerCards.forEach((c, idx) => {
+        if (idx === index) {
+          c.classList.remove('hidden');
+          c.classList.add('flex');
+          const type = c.getAttribute('data-type');
+          setTimeout(() => {
+            setupCanvas(canvases[type]);
+            drawIdleState(type);
+          }, 60);
+        } else {
+          c.classList.add('hidden');
+          c.classList.remove('flex');
+        }
+      });
+
+      stepIndicators.forEach((st, idx) => {
+        if (idx === index) {
+          st.classList.add('bg-amber-400', 'font-extrabold');
+          st.classList.remove('bg-white');
+        } else if (idx < index) {
+          st.classList.add('bg-emerald-200');
+          st.classList.remove('bg-amber-400', 'bg-white');
+        } else {
+          st.classList.remove('bg-amber-400', 'bg-emerald-200');
+          st.classList.add('bg-white');
+        }
+      });
+    }
+
+    stepIndicators.forEach(st => {
+      st.addEventListener('click', () => {
+        const step = parseInt(st.getAttribute('data-step'), 10);
+        showCrackerAt(step);
+      });
+    });
+
+    document.querySelectorAll('.btn-next-cracker').forEach(b => {
+      b.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playSparkleSound();
+        const nextIndex = parseInt(b.getAttribute('data-goto'), 10);
+        showCrackerAt(nextIndex);
+      });
+    });
+
+    function emitSparkle(x, y, char = '✨') {
+      const p = document.createElement('div');
+      p.className = 'spark-dot select-none text-base';
+      p.textContent = char;
+      p.style.left = (x - 8) + 'px';
+      p.style.top = (y - 8) + 'px';
+
+      const angle = Math.random() * Math.PI * 2;
+      const dist = Math.random() * 60 + 25;
+      p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+      p.style.setProperty('--ty', Math.sin(angle) * dist - 20 + 'px');
+
+      document.body.appendChild(p);
+      setTimeout(() => { if (p.parentNode) p.parentNode.removeChild(p); }, 750);
+    }
+
+    /* =========================================================
+       3. INTERACTIVE DIYA & CAT-DOG DUO & RANGOLI BLOOM
+       ========================================================= */
+    const diyaTouchArea = document.getElementById('diyaTouchArea');
+    const flameGroup = document.getElementById('flameGroup');
+    const sparklerTouchBtn = document.getElementById('sparklerTouchBtn');
+    const mithaiBtn = document.getElementById('mithaiBtn');
+    const rangoliArea = document.getElementById('rangoliArea');
+    const rangoliSvg = document.getElementById('rangoliSvg');
+    const rangoliBloomMsg = document.getElementById('rangoliBloomMsg');
+    let rangoliRot = 0;
+
+    if (rangoliArea) {
+      rangoliArea.addEventListener('click', () => {
+        playSparkleSound();
+        rangoliRot += 45;
+        rangoliSvg.style.transform = `rotate(${rangoliRot}deg) scale(1.08)`;
+        setTimeout(() => rangoliSvg.style.transform = `rotate(${rangoliRot}deg) scale(1)`, 300);
+
+        rangoliBloomMsg.textContent = "🌸 Blooming with festival sweetness & peace!";
+        const r = rangoliArea.getBoundingClientRect();
+        for (let i = 0; i < 9; i++) {
+          setTimeout(() => {
+            emitSparkle(r.left + r.width / 2 + (Math.random() * 60 - 30), r.top + r.height / 2 + (Math.random() * 60 - 30), ['🌸', '🌼', '✨', '🪔'][i % 4]);
+          }, i * 35);
+        }
+      });
+    }
+
+    if (diyaTouchArea) {
+      diyaTouchArea.addEventListener('click', () => {
+        playSparkleSound();
+        flameGroup.style.transform = 'scale(1.4) translateY(-4px)';
+        setTimeout(() => flameGroup.style.transform = 'scale(1)', 300);
+
+        const r = diyaTouchArea.getBoundingClientRect();
+        for (let i = 0; i < 7; i++) {
+          setTimeout(() => {
+            emitSparkle(r.left + r.width / 2 + (Math.random() * 40 - 20), r.top + 35, ['✨', '⭐', '🪔', '🌟'][i % 4]);
+          }, i * 40);
+        }
+      });
+    }
+
+    if (sparklerTouchBtn) {
+      sparklerTouchBtn.addEventListener('click', () => {
+        playFestiveChord();
+        const r = sparklerTouchBtn.getBoundingClientRect();
+        for (let i = 0; i < 10; i++) {
+          setTimeout(() => {
+            emitSparkle(r.left + r.width / 2, r.top, ['🎇', '✨', '⭐'][i % 3]);
+          }, i * 30);
+        }
+      });
+    }
+
+    if (mithaiBtn) {
+      mithaiBtn.addEventListener('click', () => {
+        playSparkleSound();
+        const r = mithaiBtn.getBoundingClientRect();
+        emitSparkle(r.left + r.width / 2, r.top, '🥮');
+      });
+    }
+
+    const catDogDuoArea = document.getElementById('catDogDuoArea');
+    const duoCat = document.getElementById('duoCat');
+    const duoDog = document.getElementById('duoDog');
+    const petHearts = document.getElementById('petHearts');
+    const petDialogueMsg = document.getElementById('petDialogueMsg');
+    let duoTapped = false;
+
+    if (catDogDuoArea) {
+      catDogDuoArea.addEventListener('click', () => {
+        playSparkleSound();
+        duoTapped = !duoTapped;
+        if (duoTapped) {
+          duoCat.style.transform = 'translate(45px, 15px) rotate(4deg)';
+          duoDog.style.transform = 'translate(135px, 15px) rotate(-4deg)';
+          petHearts.style.opacity = '1';
+          petDialogueMsg.textContent = '✨ "Prapti\'s smile is certified brighter than all Kolkata lights combined!" 🐶🐱';
+        } else {
+          duoCat.style.transform = 'translate(25px, 15px)';
+          duoDog.style.transform = 'translate(155px, 15px)';
+          petHearts.style.opacity = '0';
+          petDialogueMsg.textContent = '"Both little guys are wishing Prapti the softest, happiest Diwali!"';
+        }
+        const r = catDogDuoArea.getBoundingClientRect();
+        emitSparkle(r.left + r.width / 2, r.top + 30, '💖');
+      });
+    }
+
+    /* =========================================================
+       4. PROCEDURAL ANIMATED CRACKERS & PHYSICAL DRAGGING
+       ========================================================= */
+    const draggableMatch = document.getElementById('draggableMatch');
+    const matchInstruction = document.getElementById('matchInstruction');
+
+    const canvases = {
+      phuljhadi: document.getElementById('canvas-phuljhadi'),
+      anar: document.getElementById('canvas-anar'),
+      chakri: document.getElementById('canvas-chakri'),
+      rocket: document.getElementById('canvas-rocket'),
+      lad: document.getElementById('canvas-lad')
+    };
+
+    function setupCanvas(c) {
+      if (!c) return;
+      const rect = c.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      c.width = rect.width * dpr;
+      c.height = rect.height * dpr;
+    }
+
+    function initCrackerCanvases() {
+      Object.keys(canvases).forEach(k => {
+        setupCanvas(canvases[k]);
+        drawIdleState(k);
+      });
+    }
+
+    function drawIdleState(type) {
+      const c = canvases[type];
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const w = c.width / dpr;
+      const h = c.height / dpr;
+
+      ctx.clearRect(0, 0, c.width, c.height);
+      ctx.save();
+      ctx.scale(dpr, dpr);
+
+      if (type === 'phuljhadi') {
+        ctx.strokeStyle = '#9ca3af';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(25, h / 2);
+        ctx.lineTo(w - 45, h / 2);
+        ctx.stroke();
+
+        ctx.fillStyle = '#4b5563';
+        ctx.beginPath();
+        ctx.roundRect(w - 75, h / 2 - 4, 30, 8, 3);
+        ctx.fill();
+
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.arc(w - 45, h / 2, 4, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (type === 'anar') {
+        ctx.fillStyle = '#c2410c';
+        ctx.beginPath();
+        ctx.moveTo(w / 2, h - 8);
+        ctx.lineTo(w / 2 - 20, h - 5);
+        ctx.lineTo(w / 2 - 10, h - 35);
+        ctx.lineTo(w / 2 + 10, h - 35);
+        ctx.lineTo(w / 2 + 20, h - 5);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.strokeStyle = '#231215';
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        ctx.strokeStyle = '#e5e7eb';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(w / 2, h - 35);
+        ctx.lineTo(w / 2, h - 45);
+        ctx.stroke();
+      } else if (type === 'chakri') {
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(w / 2, h / 2, 16, 0, Math.PI * 1.5);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#ef4444';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(w / 2, h / 2, 26, 0.4, Math.PI * 1.8);
+        ctx.stroke();
+      } else if (type === 'rocket') {
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(w / 2 - 4, h / 2 - 10, 8, 24);
+        ctx.strokeStyle = '#b45309';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(w / 2, h / 2 + 14);
+        ctx.lineTo(w / 2, h / 2 + 35);
+        ctx.stroke();
+      } else if (type === 'lad') {
+        ctx.fillStyle = '#dc2626';
+        for (let i = 0; i < 10; i++) {
+          ctx.fillRect(w / 4 + (i * 12), h / 2 - 8, 8, 16);
+        }
+      }
+
+      ctx.restore();
+    }
+
+    // Draggable Matchstick Touch & Mouse Engine
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    function handleStart(e) {
+      isDragging = true;
+      playSparkleSound();
+      matchInstruction.textContent = "🔥 Bring the flame to any cracker's fuse!";
+      matchInstruction.className = "text-xs font-doodle font-bold text-orange-600 block";
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      dragStartX = clientX - currentX;
+      dragStartY = clientY - currentY;
+    }
+
+    function handleMove(e) {
+      if (!isDragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      currentX = clientX - dragStartX;
+      currentY = clientY - dragStartY;
+
+      draggableMatch.style.transform = `translate(${currentX}px, ${currentY}px) scale(1.08)`;
+
+      const matchRect = draggableMatch.getBoundingClientRect();
+      const flameX = matchRect.right - 10;
+      const flameY = matchRect.top + matchRect.height / 2;
+
+      document.querySelectorAll('.cracker-card').forEach(card => {
+        const type = card.getAttribute('data-type');
+        const isLit = card.getAttribute('data-lit') === 'true';
+        const isVisible = !card.classList.contains('hidden');
+        if (!isLit && isVisible) {
+          const cardRect = card.getBoundingClientRect();
+          if (
+            flameX >= cardRect.left &&
+            flameX <= cardRect.right &&
+            flameY >= cardRect.top &&
+            flameY <= cardRect.bottom
+          ) {
+            runAnimatedCracker(card, type);
+          }
+        }
+      });
+    }
+
+    function handleEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      draggableMatch.style.transform = `translate(0px, 0px) scale(1)`;
+      currentX = 0;
+      currentY = 0;
+      matchInstruction.textContent = "👇 Hold & drag the matchstick to the fuse!";
+      matchInstruction.className = "text-xs font-doodle font-bold text-amber-950 block";
+    }
+
+    if (draggableMatch) {
+      draggableMatch.addEventListener('mousedown', handleStart);
+      window.addEventListener('mousemove', handleMove);
+      window.addEventListener('mouseup', handleEnd);
+
+      draggableMatch.addEventListener('touchstart', handleStart, { passive: true });
+      window.addEventListener('touchmove', handleMove, { passive: false });
+      window.addEventListener('touchend', handleEnd);
+    }
+
+    // Direct tap fallback for mobile
+    document.querySelectorAll('.cracker-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const type = card.getAttribute('data-type');
+        const isLit = card.getAttribute('data-lit') === 'true';
+        if (!isLit) {
+          runAnimatedCracker(card, type);
+        }
+      });
+    });
+
+    function runAnimatedCracker(card, type) {
+      if (card.getAttribute('data-lit') === 'true') return;
+      card.setAttribute('data-lit', 'true');
+      playPopSound();
+
+      const c = canvases[type];
+      const ctx = c.getContext('2d');
+      const fuseTag = card.querySelector('.fuse-tag');
+      const desc = document.getElementById('desc-' + type);
+
+      const dpr = window.devicePixelRatio || 1;
+      const w = c.width / dpr;
+      const h = c.height / dpr;
+
+      if (fuseTag) {
+        fuseTag.textContent = "Burning! 💥";
+        fuseTag.className = "fuse-tag bg-orange-400 border border-[#231215] px-2.5 py-1 rounded-full text-[11px] font-doodle font-bold text-white shadow-xs";
+      }
+
+      const nextBtn = card.querySelector('.btn-next-cracker');
+
+      if (type === 'phuljhadi') {
+        playFestiveChord();
+        desc.textContent = "Bright, warm golden stars glowing everywhere!";
+
+        let frame = 0;
+        const sparks = [];
+        const timer = setInterval(() => {
+          frame++;
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.save();
+          ctx.scale(dpr, dpr);
+
+          ctx.strokeStyle = '#e7e5e4';
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(25, h / 2);
+          ctx.lineTo(w - 45, h / 2);
+          ctx.stroke();
+
+          for (let i = 0; i < 7; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const spd = Math.random() * 3 + 1;
+            sparks.push({
+              x: w - 45,
+              y: h / 2,
+              vx: Math.cos(angle) * spd,
+              vy: Math.sin(angle) * spd,
+              life: 1,
+              color: ['#ffbe2e', '#ffd700', '#ffffff', '#ff7800'][Math.floor(Math.random() * 4)]
+            });
+          }
+
+          for (let i = sparks.length - 1; i >= 0; i--) {
+            const p = sparks[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life -= 0.04;
+            if (p.life <= 0) {
+              sparks.splice(i, 1);
+              continue;
+            }
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, Math.random() * 2 + 1.2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+          if (frame > 140) {
+            clearInterval(timer);
+            if (fuseTag) fuseTag.textContent = "Done 🌟";
+            if (nextBtn) nextBtn.classList.remove('hidden');
+          }
+        }, 25);
+      }
+
+      else if (type === 'anar') {
+        playFestiveChord();
+        desc.textContent = "Golden shower erupting tall into the midnight sky!";
+
+        let frame = 0;
+        const fountainSparks = [];
+        const timer = setInterval(() => {
+          frame++;
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.save();
+          ctx.scale(dpr, dpr);
+
+          ctx.fillStyle = '#ea580c';
+          ctx.beginPath();
+          ctx.moveTo(w / 2, h - 8);
+          ctx.lineTo(w / 2 - 20, h - 5);
+          ctx.lineTo(w / 2 - 10, h - 35);
+          ctx.lineTo(w / 2 + 10, h - 35);
+          ctx.lineTo(w / 2 + 20, h - 5);
+          ctx.closePath();
+          ctx.fill();
+
+          for (let i = 0; i < 9; i++) {
+            const spread = (Math.random() - 0.5) * 2.8;
+            const heightPower = -(Math.random() * 4.5 + 3.5);
+            fountainSparks.push({
+              x: w / 2,
+              y: h - 35,
+              vx: spread,
+              vy: heightPower,
+              color: ['#fef08a', '#fbbf24', '#ff7800', '#ffffff'][Math.floor(Math.random() * 4)],
+              life: 1
+            });
+          }
+
+          for (let i = fountainSparks.length - 1; i >= 0; i--) {
+            const p = fountainSparks[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.18;
+            p.life -= 0.035;
+            if (p.life <= 0) {
+              fountainSparks.splice(i, 1);
+              continue;
+            }
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, Math.random() * 2.2 + 1, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+          if (frame > 150) {
+            clearInterval(timer);
+            if (fuseTag) fuseTag.textContent = "Done 🌋";
+            if (nextBtn) nextBtn.classList.remove('hidden');
+          }
+        }, 25);
+      }
+
+      else if (type === 'chakri') {
+        playSparkleSound();
+        desc.textContent = "Whirling fast in brilliant glowing circles!";
+
+        let frame = 0;
+        let rot = 0;
+        const timer = setInterval(() => {
+          frame++;
+          rot += 0.28;
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.save();
+          ctx.scale(dpr, dpr);
+
+          ctx.translate(w / 2, h / 2);
+          ctx.rotate(rot);
+
+          for (let i = 0; i < 4; i++) {
+            ctx.rotate(Math.PI / 2);
+            ctx.strokeStyle = ['#ff007f', '#00f5d4', '#fee440', '#9b5de5'][i];
+            ctx.lineWidth = 3.5;
+            ctx.beginPath();
+            ctx.arc(12, 0, 16, 0, Math.PI);
+            ctx.stroke();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(28, 5, 2.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+          if (frame > 130) {
+            clearInterval(timer);
+            if (fuseTag) fuseTag.textContent = "Done 🌀";
+            if (nextBtn) nextBtn.classList.remove('hidden');
+          }
+        }, 25);
+      }
+
+      else if (type === 'rocket') {
+        playPopSound();
+        desc.textContent = "Rocket climbed to the sky and showered colors!";
+
+        let frame = 0;
+        let rocketY = h - 20;
+        let exploded = false;
+        const burstStars = [];
+
+        const timer = setInterval(() => {
+          frame++;
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.save();
+          ctx.scale(dpr, dpr);
+
+          if (!exploded) {
+            rocketY -= 4;
+            ctx.fillStyle = '#f43f5e';
+            ctx.fillRect(w / 2 - 4, rocketY, 8, 18);
+            ctx.fillStyle = '#fbbf24';
+            ctx.beginPath();
+            ctx.arc(w / 2, rocketY + 22, Math.random() * 3 + 2, 0, Math.PI * 2);
+            ctx.fill();
+
+            if (rocketY <= 25) {
+              exploded = true;
+              playPopSound();
+              for (let i = 0; i < 28; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const spd = Math.random() * 4 + 1.5;
+                burstStars.push({
+                  x: w / 2,
+                  y: 25,
+                  vx: Math.cos(angle) * spd,
+                  vy: Math.sin(angle) * spd,
+                  color: ['#38bdf8', '#f472b6', '#fde047', '#4ade80'][Math.floor(Math.random() * 4)],
+                  life: 1
+                });
+              }
+            }
+          } else {
+            for (let i = burstStars.length - 1; i >= 0; i--) {
+              const p = burstStars[i];
+              p.x += p.vx;
+              p.y += p.vy;
+              p.life -= 0.035;
+              if (p.life <= 0) {
+                burstStars.splice(i, 1);
+                continue;
+              }
+              ctx.fillStyle = p.color;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+
+          ctx.restore();
+          if (frame > 90) {
+            clearInterval(timer);
+            if (fuseTag) fuseTag.textContent = "Done 🚀";
+            if (nextBtn) nextBtn.classList.remove('hidden');
+          }
+        }, 25);
+      }
+
+      else if (type === 'lad') {
+        desc.textContent = "Non-stop musical pops crackling across the string!";
+
+        let frame = 0;
+        let popIndex = 0;
+        const pops = [];
+
+        const timer = setInterval(() => {
+          frame++;
+          ctx.clearRect(0, 0, c.width, c.height);
+          ctx.save();
+          ctx.scale(dpr, dpr);
+
+          ctx.fillStyle = '#dc2626';
+          for (let i = popIndex; i < 12; i++) {
+            ctx.fillRect(w / 4 + (i * 12), h / 2 - 8, 8, 16);
+          }
+
+          if (frame % 8 === 0 && popIndex < 12) {
+            playPopSound();
+            pops.push({
+              x: w / 4 + (popIndex * 12) + 4,
+              y: h / 2,
+              life: 1
+            });
+            popIndex++;
+          }
+
+          for (let i = pops.length - 1; i >= 0; i--) {
+            const p = pops[i];
+            p.life -= 0.08;
+            if (p.life <= 0) {
+              pops.splice(i, 1);
+              continue;
+            }
+            ctx.fillStyle = '#fef08a';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, (1 - p.life) * 14 + 3, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+          if (popIndex >= 12 && pops.length === 0) {
+            clearInterval(timer);
+            if (fuseTag) fuseTag.textContent = "Done 🧨";
+          }
+        }, 30);
+      }
+    }
+
+    /* =========================================================
+       5. PATAKHA CAT
+       ========================================================= */
+    const patakhaDoodleArea = document.getElementById('patakhaDoodleArea');
+    if (patakhaDoodleArea) {
+      patakhaDoodleArea.addEventListener('click', () => {
+        playSparkleSound();
+        const r = patakhaDoodleArea.getBoundingClientRect();
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => {
+            emitSparkle(r.left + r.width / 2, r.top + r.height / 3, ['💥', '✨', '💖', '⭐'][i % 4]);
+          }, i * 35);
+        }
+      });
+    }
+
+    /* =========================================================
+       6. DIRECT FORMSPREE NOTIFICATION TO YOUR INBOX
+       ========================================================= */
+    const btnYes = document.getElementById('btnYes');
+    const btnNo = document.getElementById('btnNo');
+    const responseYes = document.getElementById('responseYes');
+    const responseNo = document.getElementById('responseNo');
+    const statusNotification = document.getElementById('statusNotification');
+
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjyydvpg";
+
+    function sendSilentNotification(decision) {
+      try {
+        fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json", 
+            "Accept": "application/json" 
+          },
+          body: JSON.stringify({
+            receiver: "pritamdas.321.go@gmail.com",
+            phone: "8777010723",
+            user: "Prapti",
+            response: decision,
+            page: "Kolkata Diwali Lights Invitation",
+            timestamp: new Date().toLocaleString()
+          })
+        }).then(res => {
+          if (res.ok && statusNotification) {
+            statusNotification.textContent = "✨ Sent quietly to Pritam's inbox!";
+          }
+        }).catch(() => {});
+      } catch(e) {}
+    }
+
+    if (btnYes) {
+      btnYes.addEventListener('click', () => {
+        playFestiveChord();
+        responseYes.classList.remove('hidden');
+        responseNo.classList.add('hidden');
+        sendSilentNotification("YES - Let's go see the Kolkata Diwali lights together! 🪔✨");
+
+        const r = btnYes.getBoundingClientRect();
+        for (let i = 0; i < 15; i++) {
+          setTimeout(() => {
+            emitSparkle(r.left + r.width / 2 + (Math.random() * 60 - 30), r.top, ['🪔', '✨', '🌆', '⭐', '💖'][i % 5]);
+          }, i * 35);
+        }
+      });
+    }
+
+    if (btnNo) {
+      btnNo.addEventListener('click', () => {
+        playSparkleSound();
+        responseNo.classList.remove('hidden');
+        responseYes.classList.add('hidden');
+        sendSilentNotification("NO - Maybe another time");
+      });
+    }
+
+    /* =========================================================
+       7. SKY LANTERNS
+       ========================================================= */
+    const releaseLanternBtn = document.getElementById('releaseLanternBtn');
+    const skyOverlay = document.getElementById('skyOverlay');
+
+    if (releaseLanternBtn) {
+      releaseLanternBtn.addEventListener('click', () => {
+        playFestiveChord();
+        for (let i = 0; i < 8; i++) {
+          setTimeout(createSkyLantern, i * 220);
+        }
+      });
+    }
+
+    function createSkyLantern() {
+      const lantern = document.createElement('div');
+      lantern.className = 'absolute pointer-events-none select-none text-2xl transition-all duration-1000';
+      lantern.textContent = '🏮';
+      const startX = Math.random() * (window.innerWidth - 60) + 20;
+      lantern.style.left = startX + 'px';
+      lantern.style.bottom = '-40px';
+      lantern.style.opacity = '0.95';
+      lantern.style.transform = `scale(${Math.random() * 0.5 + 0.9})`;
+      skyOverlay.appendChild(lantern);
+
+      let posY = -40;
+      let opacity = 0.95;
+      const speed = Math.random() * 1.8 + 2.0;
+      const swayAmp = Math.random() * 20 + 10;
+      let swayTick = Math.random() * 10;
+
+      const flyTimer = setInterval(() => {
+        posY += speed;
+        swayTick += 0.05;
+        lantern.style.bottom = posY + 'px';
+        lantern.style.left = (startX + Math.sin(swayTick) * swayAmp) + 'px';
+
+        if (posY > window.innerHeight * 0.6) {
+          opacity -= 0.015;
+          lantern.style.opacity = Math.max(0, opacity).toString();
+        }
+
+        if (posY > window.innerHeight + 50 || opacity <= 0) {
+          clearInterval(flyTimer);
+          if (lantern.parentNode) lantern.parentNode.removeChild(lantern);
+        }
+      }, 20);
+    }
+  </script>
+</body>
+</html>
